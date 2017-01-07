@@ -22,5 +22,7 @@ int main()
 	cout << d << endl; //aulb15
 	d[2]=d[1]=d[0];
 	cout << d << endl; //aaab15
+	cout << a.atoint() << endl;
+	cout << b.atoint() << endl;
 	return 0;
 }

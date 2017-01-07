@@ -26,6 +26,7 @@ public:
 	void write(unsigned int i, char c);
 	char operator[](unsigned int i) const;
 	Cref operator[](unsigned int i);
+	int atoint();
 };
 
 struct rcstring::rctext
@@ -66,7 +67,7 @@ struct rcstring::rctext
     		}
     		else
       			strncpy(s,p,size);
-   			s[size]='\0';
+   		s[size]='\0';
   		}
 	private:
   		rctext(const rctext&);
@@ -188,20 +189,10 @@ struct rcstring::rctext
   		check(i);
   		return Cref(*this,i);
 	}
+	int rcstring::atoint()
+	{
+		return atoi(data->s);	
+	}
 	
-	int rcstring::atoi()
-	{
-		///TRESC///
-	}
-
-	rcstring &rcstring::toLower()
-	{
-		///TRESC///
-	}
-
-	rcstring rcstring::Left(int n)
-	{
-		///TRESC//
-	}
 
 #endif /* __RCSTRING_H__ */
