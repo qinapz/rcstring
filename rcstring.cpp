@@ -27,5 +27,6 @@ int main()
 	cout << b.atoint() << endl;
 	cout << e << endl;
 	cout << e.toLower() << endl;
+	cout << e.Left(7) << endl;
 	return 0;
 }

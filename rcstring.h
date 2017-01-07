@@ -28,6 +28,7 @@ public:
 	Cref operator[](unsigned int i);
 	int atoint();
 	rcstring& toLower();
+	rcstring Left(int n);
 };
 
 struct rcstring::rctext
@@ -202,6 +203,20 @@ struct rcstring::rctext
 			data->s[i] = tolower(data->s[i]);
 		}
 		return *this;
+	}
+	rcstring rcstring::Left(int n)
+	{
+		char *extracted = new char[n+1];
+		rcstring x;
+		int i = 0;
+		for (i = 0; i < n; i++)
+		{
+			extracted[i] = data->s[i];
+		}
+		extracted[n] = '\0';
+		x = rcstring(extracted);
+		delete []extracted;
+		return x;	
 	}
 
 #endif /* __RCSTRING_H__ */
