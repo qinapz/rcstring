@@ -2,9 +2,10 @@
 
 int main()
 {
-	rcstring a,b,c;
+	rcstring a,b,c,e;
 	a="10";
 	b="ala ma kota";
+	e="tEsT tO LoWER";
 	
 	cout << a << " " << b << endl; // 10 ala ma ma kota
 	c=a+b;
@@ -24,5 +25,7 @@ int main()
 	cout << d << endl; //aaab15
 	cout << a.atoint() << endl;
 	cout << b.atoint() << endl;
+	cout << e << endl;
+	cout << e.toLower() << endl;
 	return 0;
 }

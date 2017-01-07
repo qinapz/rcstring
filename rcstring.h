@@ -27,6 +27,7 @@ public:
 	char operator[](unsigned int i) const;
 	Cref operator[](unsigned int i);
 	int atoint();
+	rcstring& toLower();
 };
 
 struct rcstring::rctext
@@ -193,6 +194,14 @@ struct rcstring::rctext
 	{
 		return atoi(data->s);	
 	}
-	
+	rcstring &rcstring::toLower()
+	{
+		data = data->detach();
+		for (unsigned int i = 0; i < data->size; i++)
+		{
+			data->s[i] = tolower(data->s[i]);
+		}
+		return *this;
+	}
 
 #endif /* __RCSTRING_H__ */
